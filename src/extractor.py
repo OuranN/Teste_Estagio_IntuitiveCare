@@ -1,8 +1,8 @@
 import zipfile
 import os
 
-RAW_DIR = "data/raw"
-EXTRACTED_DIR = "data/extracted"
+RAW_DIR = "data/test1/raw"
+EXTRACTED_DIR = "data/test1/extracted"
 
 
 def extract_all_zips():

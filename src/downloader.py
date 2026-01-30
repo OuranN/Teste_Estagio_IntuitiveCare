@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 
 BASE_URL = "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/"
 
-RAW_DIR = "data/raw" # Pasta onde os arquivos serao salvos
+RAW_DIR = "data/test1/raw" # Pasta onde os arquivos serao salvos
 
 
 def list_links(url):

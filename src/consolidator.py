@@ -4,7 +4,7 @@ import zipfile
 
 def consolidate():
     print("Lendo despesas...")
-    df = pd.read_csv("data/processed/despesas_sinistros.csv", dtype=str)
+    df = pd.read_csv("data/test1/processed/despesas_sinistros.csv", dtype=str)
 
     # O campo "cnpj" nos arquivos de despesas é na verdade o REGISTRO ANS
     df = df.rename(columns={"cnpj": "REGISTRO_OPERADORA"})
@@ -14,7 +14,7 @@ def consolidate():
     df = df[df["valor"] > 0]
 
     print("Lendo cadastro de operadoras...")
-    oper = pd.read_csv("data/raw/operadoras.csv", sep=";", encoding="utf-8", dtype=str)
+    oper = pd.read_csv("data/test1/raw/operadoras.csv", sep=";", encoding="utf-8", dtype=str)
 
     oper = oper[["REGISTRO_OPERADORA", "CNPJ", "Razao_Social"]]
     oper = oper.rename(columns={
@@ -39,12 +39,12 @@ def consolidate():
         "trimestre": "Trimestre"
     })
 
-    os.makedirs("data/final", exist_ok=True)
+    os.makedirs("data/test1/final", exist_ok=True)
 
-    final_path = "data/final/consolidado_despesas.csv"
+    final_path = "data/test1/final/consolidado_despesas.csv"
     final.to_csv(final_path, index=False)
 
-    with zipfile.ZipFile("data/final/consolidado_despesas.zip", "w", zipfile.ZIP_DEFLATED) as z:
+    with zipfile.ZipFile("data/test1/final/consolidado_despesas.zip", "w", zipfile.ZIP_DEFLATED) as z:
         z.write(final_path, arcname="consolidado_despesas.csv")
 
     print("Arquivo gerado:", final_path)

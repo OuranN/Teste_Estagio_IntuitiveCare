@@ -3,8 +3,8 @@ import pandas as pd
 from io import StringIO
 from src.expense_filter import is_expense
 
-EXTRACTED_DIR = "data/extracted"
-PROCESSED_DIR = "data/processed"
+EXTRACTED_DIR = "data/test1/extracted"
+PROCESSED_DIR = "data/test1/processed"
 
 COLS = ["data", "cnpj", "codigo", "descricao", "valor1", "valor2"]
 
@@ -71,7 +71,7 @@ def extract_expenses():
    
     # Salvar arquivo
     os.makedirs(PROCESSED_DIR, exist_ok=True)
-    final.to_csv("data/processed/despesas_sinistros.csv", index=False, encoding="utf-8")
+    final.to_csv("data/test1/processed/despesas_sinistros.csv", index=False, encoding="utf-8")
 
     print("Arquivo final salvo em: data/processed/despesas_sinistros.csv")
     print("Total de registros:", len(final))
