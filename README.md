@@ -35,7 +35,7 @@ Como os diretórios da ANS possuem estruturas variáveis, o código foi constru�
 Para cada trimestre:
 - Todos os arquivos `.zip` são baixados
 - Os arquivos são extraídos automaticamente
-- Apenas arquivos contendo **Despesas com Eventos/Sinistros** são processados
+- Apenas arquivos contendo **Despesas com Eventos/Sinistros** são processados (pesquisando descobri que seriam os com código 41, 4 = despesa e 41 = despesa evento/sinistro)
 
 ### 1.2 – Trade-off técnico (memória vs processamento incremental)
 
